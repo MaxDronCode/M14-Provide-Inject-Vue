@@ -3,6 +3,11 @@ import { ref } from 'vue'
 
 const title = ref('Snazzy Burger')
 
+const emit = defineEmits(['placeOrder'])
+
+const placeOrder = () => {
+    emit('placeOrder', title.value)
+}
 </script>
 
 <template>
