@@ -1,0 +1,6 @@
+[
+  { "name": "Hamburger 🍔.", "price": 5 },
+  { "name": "Cheeseburger 🧀", "price": 6 },
+  { "name": "Impossible Burger 🥕", "price": 7 },
+  { "name": "Fries 🍟", "price": 2 }
+]
