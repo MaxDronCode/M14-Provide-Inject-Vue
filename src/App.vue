@@ -1,18 +1,18 @@
 <script setup>
-import { ref, reactive } from 'vue'
+import { ref, reactive, provide } from 'vue'
 import products from '@/productsData/products.json'
 import { Currencies } from '@/const/const.js'
 import TitleCmp from '@/components/TitleCmp.vue'
 import ProductCmp from '@/components/ProductCmp.vue'
 
 const currency = ref(Currencies.DOLLAR)
+provide('currency', currency)
+
 const productsInCart = reactive([])
 
 const receiveTitle = (title) => {
   alert(`Su pedido en ${title} se ha tramitado!`)
 }
-
-
 
 const saveProduct = product => {
   productsInCart.push(product)
@@ -31,7 +31,7 @@ const saveProduct = product => {
         <option>{{ Currencies.EURO }}</option>
       </select>
     </div>
-    <ProductCmp :sendProducts={{ products }} :currency="currency" @saveProduct="saveProduct"/>
+      <ProductCmp :sendProducts="products" @saveProduct="saveProduct"/>
   </div>
 </template>
 
